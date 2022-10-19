@@ -1,3 +1,7 @@
+//21ВП2 Лакеева, Малькова
+//Вариант - 8
+//Лаба 3
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -18,14 +22,14 @@ public class Main {
         Star Aldebaran = new Star("Альдебаран", 441000000, 36192, "17 век", 3000000, 1680.1);
 
         Earth.arr_push();
-        Mercury.arr_push();
         Venus.arr_push();
-        Mars.arr_push();
+        Mercury.arr_push();
         Jupiter.arr_push();
-        Saturn.arr_push();
+        Mars.arr_push();
         Uranus.arr_push();
-        Neptune.arr_push();
+        Saturn.arr_push();
         Pluto.arr_push();
+        Neptune.arr_push();
 
         Sun.arr_push();
         Sirius.arr_push();
@@ -34,6 +38,7 @@ public class Main {
         System.out.println(Cosmic_body.theFurthest());
         System.out.println(Cosmic_body.closer_than_Earth());
         ArrayList<Cosmic_body> s_arr = Cosmic_body.sort_array();
+        System.out.println("Космические тела в порядке возрастания расстояний до Солнца");
         for (Cosmic_body o : s_arr)
             System.out.println(o.toString());
 
@@ -54,46 +59,56 @@ public class Main {
             double d = in2.nextDouble();
             System.out.println(Cosmic_body.edit(Cosmic_body.find(name), d));
         }
-// for (Cosmic_body o : s_arr)
-// System.out.println(o.toString()); // чтобы проверить, что диаметр реально изменился
     }
 }
 
 abstract class Cosmic_body {
-    private static ArrayList<Cosmic_body> arr = new ArrayList<>();
-    private static final int from_earth_to_sun = 150;
-    private String name;
-    private int distance_to_sun;
-    private double diameter;
-    private double weight;
+    private static ArrayList<Cosmic_body> arr = new ArrayList<>(); //Динамический массив
+    private static final int from_earth_to_sun = 150; //Расстояние от Земли до Солнца
+    private String name; //Имя
+    private int distance_to_sun; //Расстояние до Солнца
+    private double diameter; //Диаметр
+    private double weight; //Вес
+
+    //Конструктор
     public Cosmic_body(String name, int distance_to_sun, double diameter, double weight) {
         this.name = name;
         this.distance_to_sun = distance_to_sun;
         this.diameter = diameter;
         this.weight = weight;
     }
+
+    //Получить имя
     public String getName(){
         return name;
     }
+
+    //Получить расстояние до Солнца
     public int getDistance_to_sun(){
         return distance_to_sun;
     }
+
+    //Получить диаметр
     public double getDiameter(){
         return diameter;
     }
 
+    //Установить значение диаметра
     public void setDiameter(double d){
         this.diameter = d;
     }
 
+    //Получить значение веса
     public double getWeight(){
         return weight;
     }
 
+    //Добавить объект в массив
     public void arr_push(){
         arr.add(this);
     }
 
+    //Поиск самой далекой планеты
     public static String theFurthest(){
         Cosmic_body o = arr.get(0);
         for (int i=0; i<arr.size() ;i++){
@@ -103,6 +118,7 @@ abstract class Cosmic_body {
         return "Самая далекая планета от Солнца:\n" + o.getName() +"\n";
     }
 
+    //Поиск планет, которые ближе к Солнцу, чем Земля
     public static String closer_than_Earth(){
         String result="";
         for (int i=0; i<arr.size(); i++){
@@ -112,6 +128,7 @@ abstract class Cosmic_body {
         return "Планеты, которые ближе к Солнцу, чем Земля:\n" + result + "\n";
     }
 
+    //Отсортировать массив по возрастанию расстояния от Солнца
     static public ArrayList<Cosmic_body> sort_array(){
         for (int j= arr.size()-1; j>0; j--){
             for (int i=0; i<=j-1; i++){
@@ -125,6 +142,7 @@ abstract class Cosmic_body {
         return arr;
     }
 
+    //Поиск объекта по имени
     public static Cosmic_body find(String n) {
         for (int i = 0; i < arr.size(); i++) {
             if (arr.get(i).getName().equals(n)) {
@@ -134,6 +152,7 @@ abstract class Cosmic_body {
         return null;
     }
 
+    //Редактирование диаметра в объекте с определенным именем
     public static Cosmic_body edit(Cosmic_body o, double d){
         o.setDiameter(d);
         return o;
@@ -141,22 +160,27 @@ abstract class Cosmic_body {
 }
 
 class Planet extends Cosmic_body {
-    private int satellite;
-    private int period;
+    private int satellite; //Кол-во спутников
+    private int period; //Период обращения
+
+    //Конструктор
     public Planet(String name, int distance_to_sun, double diameter, double weight, int satellite, int period){
         super(name, distance_to_sun, diameter, weight);
         this.satellite = satellite;
         this.period=period;
     }
 
+    //Получить количество спутников
     public int getSatellite(){
         return satellite;
     }
 
+    //Получить период обращения
     public int getPeriod(){
         return period;
     }
 
+    //Переопределение метода класса Object
     @Override
     public String toString(){
         return "Планета: " + super.getName() + "\nРасстояние до солнца (млн км): " + super.getDistance_to_sun() +
@@ -166,22 +190,27 @@ class Planet extends Cosmic_body {
 }
 
 class Star extends Cosmic_body{
-    private double luminosity;
-    private String opening_date;
+    private double luminosity; //Светимость
+    private String opening_date; //Дата открытия
+
+    //Конструктор
     public Star(String name, int distance_to_sun, double diameter, String opening_date, double weight, double luminosity){
         super(name, distance_to_sun, diameter, weight);
         this.luminosity = luminosity;
         this.opening_date = opening_date;
     }
 
+    //Получить значение светимости
     private double getLuminosity(){
         return luminosity;
     }
 
+    //Получить дату открытия
     public String getOpening_date(){
         return opening_date;
     }
 
+    //Переопределение метода класса Object
     @Override
     public String toString(){
         return "Звезда: " + super.getName() + "\nРасстояние до солнца (млн км): " + super.getDistance_to_sun() +
