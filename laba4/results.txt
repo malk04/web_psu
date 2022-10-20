@@ -1,0 +1,3 @@
+1 список  ->  2 список  ->  Результат
+two, three, four  ->  one, two, three, four, five  ->  L1 входит в L2
+abvg, abvg, ffff  ->  ffff, ggggg, abvg, ffff, ifigi  ->  L1 не входит в L2
