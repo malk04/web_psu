@@ -2,3 +2,5 @@
 two, three, four  ->  one, two, three, four, five  ->  L1 входит в L2
 abvg, abvg, ffff  ->  ffff, ggggg, abvg, ffff, ifigi  ->  L1 не входит в L2
 jfghjsf, fdjng  ->  jhdfjhsb, jdbsh, jhbdhs  ->  L1 не входит в L2
+one, two  ->  one, two, free  ->  L1 входит в L2
+apple, orange, water  ->  rectangle, window, apple, tree, orange, water  ->  L1 входит в L2

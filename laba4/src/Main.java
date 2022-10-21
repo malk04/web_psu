@@ -75,13 +75,13 @@ public class Main{
 
         try {
             FileWriter writer = new FileWriter("results.txt", true);
-            String joined1 = String.join(", ", L1);
-            String joined2 = String.join(", ", L2);
+            //String joined1 = String.join(", ", L1);
+            //String joined2 = String.join(", ", L2);
             String text;
             if (includesAll(L1, L2)){
-                text = joined1 + "  ->  " + joined2 + "  ->  L1 входит в L2";
+                text = l1 + "  ->  " + l2 + "  ->  L1 входит в L2";
             } else {
-                text = joined1 + "  ->  " + joined2 + "  ->  L1 не входит в L2";
+                text = l1 + "  ->  " + l2 + "  ->  L1 не входит в L2";
             }
             writer.write(text);
             writer.append('\n');
