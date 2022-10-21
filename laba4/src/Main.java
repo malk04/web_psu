@@ -11,10 +11,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Main{
-    public static boolean includesAll(ArrayList l1, ArrayList l2) {
+    public static boolean includesAll(ArrayList<String> l1, ArrayList<String> l2) {
         boolean f = false;
-        Iterator p1 = l1.iterator();
-        Iterator p2 = l2.iterator();
+        Iterator<String> p1 = l1.iterator();
+        Iterator<String> p2 = l2.iterator();
         while (p1.hasNext()) {
             Object s1 = p1.next();
             while (p2.hasNext()) {
@@ -73,8 +73,8 @@ public class Main{
 //        L1.add("three");
 //        L1.add("four");
 
-        try(FileWriter writer = new FileWriter("results.txt", true))
-        {
+        try {
+            FileWriter writer = new FileWriter("results.txt", true);
             String joined1 = String.join(", ", L1);
             String joined2 = String.join(", ", L2);
             String text;
@@ -85,6 +85,7 @@ public class Main{
             }
             writer.write(text);
             writer.append('\n');
+            writer.close();
         }
         catch(IOException e){
             System.out.println("Error: " + e);
