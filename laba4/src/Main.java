@@ -88,7 +88,7 @@ public class Main{
             writer.close();
         }
         catch(IOException e){
-            System.out.println("Error: " + e);
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }
