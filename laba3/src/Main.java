@@ -60,7 +60,11 @@ public class Main {
                 out.println("Проверьте порядок полей класса и введите корректные значения полей через запятую и пробел");
                 line = in.nextLine();
             }
-            if (line.equals("0")) break;
+            if (line.equals("0")){
+                break;
+            } else {
+                out.println("Объект успешно создан! Если хотите завершить создавание объектов - введите 0");
+            }
             String[] words = line.split(", ");
             if (words[0].equals("Planet")) {
                 String name = words[1];
