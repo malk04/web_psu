@@ -62,8 +62,6 @@ public class Main {
             }
             if (line.equals("0")){
                 break;
-            } else {
-                out.println("Объект успешно создан! Если хотите завершить создавание объектов - введите 0");
             }
             String[] words = line.split(", ");
             if (words[0].equals("Planet")) {
@@ -75,6 +73,7 @@ public class Main {
                 int p = Integer.parseInt (words[6]);
                 Planet pl = new Planet (name, to_sun, d, w, s, p);
                 pl.arr_push();
+                out.println("Объект успешно создан! Если хотите завершить создавание объектов - введите 0");
             }
             else if (words[0].equals("Star")){
                 String name = words[1];
@@ -85,6 +84,7 @@ public class Main {
                 double l= Double.parseDouble (words[6]);
                 Star st = new Star (name, to_sun, d, od, w, l);
                 st.arr_push();
+                out.println("Объект успешно создан! Если хотите завершить создавание объектов - введите 0");
             }
             else
                 out.printf("Невозможно создать объект класса %s\n", words[0]);
@@ -156,6 +156,7 @@ public class Main {
                         break;
                 }
                 ob.edit(field, value);
+                out.println("Редактирование выполнено успешно!\n");
                 out.println(ob);
             }
             // Если объект класса Planet
