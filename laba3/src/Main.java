@@ -1,9 +1,15 @@
-//21ВП2 Лакеева, Малькова
-//Вариант - 8
-//Лаба 3
+// 21ВП2 Малькова, Лакеева
+// Вариант 8. Лаба 3
+// Космические тела
+//– определить самую далекую от Солнца планету;
+//– определить планеты, которые ближе к Солнцу, чем Земля;
+//– упорядочить массив по возрастанию расстояния от Солнца;
+//– организовать поиск по названию планеты, исправление одного из полей и вывод полной информации о планете после редактирования.
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
+import static java.lang.System.*;
 
 public class Main {
     public static void main(String args[]){
@@ -35,13 +41,65 @@ public class Main {
         Sirius.arr_push();
         Aldebaran.arr_push();
 
+        // Создание объектов с консоли
+        out.println("Создайте объект. Для этого введите название класса (Planet или Star) и \n" +
+                "значения полей объекта через запятую и пробел. Поля класса Planet: название(string), расстояние до солнца(int, млн км), \n" +
+                "диаметр(double), вес(int, 10^24 кг), число спутников(int), период обращения(int). Поля класса Star: название(string), \n" +
+                "расстояние до солнца(int, млн км), диаметр(double), дата открытия(string), вес(int, 10^24), светимость(double).\n" +
+                "Создание объектов продолжается, пока вы не введете 0\n" +
+                "Пример ввода: Planet, Глизе, 9866, 4.5, 57, 0, 780");
+        Scanner in = new Scanner(System.in);
+        String line = in.nextLine();
+        while (!Pattern.matches("^0$", line)){
+            // Проверка корректности ввода
+            while (!Pattern.matches("(^(Planet), ([0-9а-яa-zА-ЯA-Z]+ )*[0-9а-яa-zА-ЯA-Z]+, [0-9]+, " +
+                    "([1-9][0-9]*(\\.[0-9]+)?|0(.[0-9]+)?), ([1-9][0-9]*(\\.[0-9]+)?|0(.[0-9]+)?), [0-9]+, " +
+                    "[0-9]+$)|(^(Star), ([0-9а-яa-zА-ЯA-Z]+ )*[0-9а-яa-zА-ЯA-Z]+, [0-9]+, ([1-9][0-9]*(\\.[0-9]+)?|" +
+                    "0(.[0-9]+)?), ([0-9а-я]+ )*[0-9а-я]+, [0-9]+, ([1-9][0-9]*(\\.[0-9]+)?|0(.[0-9]+)?)$)|" +
+                    "(^((?!Planet|Star)[^, \\.]+)(, [^, ]+)+$)|(^0$)", line)){
+                out.println("Проверьте порядок полей класса и введите корректные значения полей через запятую и пробел");
+                line = in.nextLine();
+            }
+            if (line.equals("0")) break;
+            String[] words = line.split(", ");
+            if (words[0].equals("Planet")) {
+                String name = words[1];
+                int to_sun = Integer.parseInt (words[2]);
+                double d = Double.parseDouble (words[3]);
+                double w = Double.parseDouble (words[4]);
+                int s =  Integer.parseInt (words[5]);
+                int p = Integer.parseInt (words[6]);
+                Planet pl = new Planet (name, to_sun, d, w, s, p);
+                pl.arr_push();
+            }
+            else if (words[0].equals("Star")){
+                String name = words[1];
+                int to_sun = Integer.parseInt (words[2]);
+                double d = Double.parseDouble (words[3]);
+                String od = words[4];
+                double w = Double.parseDouble (words[5]);
+                double l= Double.parseDouble (words[6]);
+                Star st = new Star (name, to_sun, d, od, w, l);
+                st.arr_push();
+            }
+            else
+                out.printf("Невозможно создать объект класса %s\n", words[0]);
+            line = in.nextLine();
+        }
+
+        // Самая далекая от Солнца планета
         System.out.println(Cosmic_body.theFurthest());
+
+        //  Планеты, которые ближе к Солнцу, чем Земля
         System.out.println(Cosmic_body.closer_than_Earth());
+
+        // Упорядочить массив по возрастанию расстояния от Солнца
         ArrayList<Cosmic_body> s_arr = Cosmic_body.sort_array();
-        System.out.println("Космические тела в порядке возрастания расстояний до Солнца");
+        System.out.println("Космические тела в порядке возрастания расстояний до Солнца:");
         for (Cosmic_body o : s_arr)
             System.out.println(o.toString());
 
+        // Редактирование поля класса
         System.out.print("Введите имя космического тела: ");
         Scanner in1 = new Scanner(System.in);
         String name = in1.nextLine();
@@ -49,66 +107,151 @@ public class Main {
             System.out.println("Объект с таким именем не найден");
         }
         else{
+            Cosmic_body ob = Cosmic_body.find(name);
             System.out.println(Cosmic_body.find(name));
-            System.out.print("Введите новое значение диаметра: ");
-            Scanner in2 = new Scanner(System.in);
-            while (!in2.hasNextDouble()){
-                System.out.print("Разрешён ввод только дробных чисел! Повторите ввод: ");
-                in2.next();
+            // Если объект класса Star
+            if (ob.getClass().getName().equals("Star")){
+                out.println("Введите поле класса, которое хотите изменить (имя, расстояние до солнца, диаметр, " +
+                        "дата открытия, вес, светимость)");
+                Scanner in2 = new Scanner(System.in);
+                String field = in2.nextLine();
+                while (!Pattern.matches("^(имя|расстояние до солнца|диаметр|дата открытия|вес" +
+                        "|светимость)$", field)){
+                    out.println("Проверьте название поля, которое вы ввели");
+                    field = in2.nextLine();
+                }
+                out.println("Введите новое значение поля");
+                Scanner in3 = new Scanner(System.in);
+                String value = in3.nextLine();
+                switch (field){
+                    case ("расстояние до солнца"):
+                        while (!Pattern.matches("[0-9]+", value)){
+                            out.println("Расстояние до солнца должно быть целочисленным числом");
+                            value = in3.nextLine();
+                        }
+                        break;
+                    case ("диаметр"):
+                        while (!Pattern.matches("(^[1-9][0-9]*(\\.[0-9]+)?|0(.[0-9]+)?)", value)){
+                            out.println("Диаметр должен быть числом");
+                            value = in3.nextLine();
+                        }
+                        break;
+                    case ("вес"):
+                        while (!Pattern.matches("(^[1-9][0-9]*(\\.[0-9]+)?|0(.[0-9]+)?)", value)){
+                            out.println("Вес должен быть числом");
+                            value = in3.nextLine();
+                        }
+                        break;
+                    case ("светимость"):
+                        while (!Pattern.matches("(^[1-9][0-9]*(\\.[0-9]+)?|0(.[0-9]+)?)", value)){
+                            out.println("Светимость должна быть числом");
+                            value = in3.nextLine();
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                ob.edit(field, value);
+                out.println(ob);
             }
-            double d = in2.nextDouble();
-            System.out.println(Cosmic_body.edit(Cosmic_body.find(name), d));
+            // Если объект класса Planet
+            else if (ob.getClass().getName().equals("Planet")){
+                out.println("Введите поле класса, которое хотите изменить (имя, расстояние до солнца, диаметр, " +
+                        "вес, число спутников, период обращения)");
+                Scanner in2 = new Scanner(System.in);
+                String field = in2.nextLine();
+                while (!Pattern.matches("^(имя|расстояние до солнца|диаметр|вес" +
+                        "|число спутников|период обращения)$", field)){
+                    out.println("Проверьте название поля, которое вы ввели");
+                    field = in2.nextLine();
+                }
+                out.println("Введите новое значение поля");
+                Scanner in3 = new Scanner(System.in);
+                String value = in3.nextLine();
+                switch (field){
+                    case ("расстояние до солнца"):
+                        while (!Pattern.matches("[0-9]+", value)){
+                            out.println("Расстояние до солнца должно быть целым числом");
+                            value = in3.nextLine();
+                        }
+                        break;
+                    case ("диаметр"):
+                        while (!Pattern.matches("(^[1-9][0-9]*(\\.[0-9]+)?|0(.[0-9]+)?)", value)){
+                            out.println("Диаметр должен быть числом");
+                            value = in3.nextLine();
+                        }
+                        break;
+                    case ("вес"):
+                        while (!Pattern.matches("(^[1-9][0-9]*(\\.[0-9]+)?|0(.[0-9]+)?)", value)){
+                            out.println("Вес должен быть числом");
+                            value = in3.nextLine();
+                        }
+                        break;
+                    case ("число спутников"):
+                        while (!Pattern.matches("[0-9]+", value)){
+                            out.println("Число спутников - целое число");
+                            value = in3.nextLine();
+                        }
+                        break;
+                    case ("период обращения"):
+                        while (!Pattern.matches("(^[1-9][0-9]*(\\.[0-9]+)?|0(.[0-9]+)?)", value)){
+                            out.println("Период обращения - целое число");
+                            value = in3.nextLine();
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                ob.edit(field, value);
+                out.println(ob);
+            }
         }
     }
 }
 
 abstract class Cosmic_body {
-    private static ArrayList<Cosmic_body> arr = new ArrayList<>(); //Динамический массив
-    private static final int from_earth_to_sun = 150; //Расстояние от Земли до Солнца
-    private String name; //Имя
-    private int distance_to_sun; //Расстояние до Солнца
-    private double diameter; //Диаметр
-    private double weight; //Вес
-
-    //Конструктор
+    private static ArrayList<Cosmic_body> arr = new ArrayList<>();
+    private static final int from_earth_to_sun = 150;
+    private String name;
+    private int distance_to_sun;
+    private double diameter;
+    private double weight;
     public Cosmic_body(String name, int distance_to_sun, double diameter, double weight) {
         this.name = name;
         this.distance_to_sun = distance_to_sun;
         this.diameter = diameter;
         this.weight = weight;
     }
-
-    //Получить имя
     public String getName(){
         return name;
     }
-
-    //Получить расстояние до Солнца
     public int getDistance_to_sun(){
         return distance_to_sun;
     }
-
-    //Получить диаметр
     public double getDiameter(){
         return diameter;
     }
-
-    //Установить значение диаметра
-    public void setDiameter(double d){
-        this.diameter = d;
-    }
-
-    //Получить значение веса
     public double getWeight(){
         return weight;
     }
 
-    //Добавить объект в массив
+    public void setDiameter(double d){
+        this.diameter = d;
+    }
+    public void setName(String n){
+        this.name = n;
+    }
+    public void setDistance_to_sun(int d){
+        this.distance_to_sun = d;
+    }
+    public void setWeight(double w){
+        this.weight = w;
+    }
+
     public void arr_push(){
         arr.add(this);
     }
 
-    //Поиск самой далекой планеты
     public static String theFurthest(){
         Cosmic_body o = arr.get(0);
         for (int i=0; i<arr.size() ;i++){
@@ -118,7 +261,6 @@ abstract class Cosmic_body {
         return "Самая далекая планета от Солнца:\n" + o.getName() +"\n";
     }
 
-    //Поиск планет, которые ближе к Солнцу, чем Земля
     public static String closer_than_Earth(){
         String result="";
         for (int i=0; i<arr.size(); i++){
@@ -128,7 +270,6 @@ abstract class Cosmic_body {
         return "Планеты, которые ближе к Солнцу, чем Земля:\n" + result + "\n";
     }
 
-    //Отсортировать массив по возрастанию расстояния от Солнца
     static public ArrayList<Cosmic_body> sort_array(){
         for (int j= arr.size()-1; j>0; j--){
             for (int i=0; i<=j-1; i++){
@@ -142,7 +283,6 @@ abstract class Cosmic_body {
         return arr;
     }
 
-    //Поиск объекта по имени
     public static Cosmic_body find(String n) {
         for (int i = 0; i < arr.size(); i++) {
             if (arr.get(i).getName().equals(n)) {
@@ -152,69 +292,121 @@ abstract class Cosmic_body {
         return null;
     }
 
-    //Редактирование диаметра в объекте с определенным именем
-    public static Cosmic_body edit(Cosmic_body o, double d){
-        o.setDiameter(d);
-        return o;
-    }
+    // заменить!
+    public abstract void edit(String f, String v);
 }
 
 class Planet extends Cosmic_body {
-    private int satellite; //Кол-во спутников
-    private int period; //Период обращения
-
-    //Конструктор
+    private int satellite;
+    private int period;
     public Planet(String name, int distance_to_sun, double diameter, double weight, int satellite, int period){
         super(name, distance_to_sun, diameter, weight);
         this.satellite = satellite;
         this.period=period;
     }
 
-    //Получить количество спутников
     public int getSatellite(){
         return satellite;
     }
 
-    //Получить период обращения
     public int getPeriod(){
         return period;
     }
 
-    //Переопределение метода класса Object
+    public void setSatellite(int s){
+        this.satellite = s;
+    }
+    public void setPeriod(int p){
+        this.period = p;
+    }
+
     @Override
     public String toString(){
         return "Планета: " + super.getName() + "\nРасстояние до солнца (млн км): " + super.getDistance_to_sun() +
                 "\nДиаметр: " + super.getDiameter() + "\nПериод обращения: " + this.getPeriod() +
                 "\nЧисло спутников: " + this.getSatellite() + "\nМасса (10^24 кг): " + super.getWeight() + "\n\n";
     }
+
+    public void edit(String f, String v){
+        switch (f) {
+            case ("имя"):
+                super.setName(v);
+                break;
+            case ("расстояние до солнца"):
+                super.setDistance_to_sun(Integer.parseInt(v));
+                break;
+            case ("диаметр"):
+                super.setDiameter(Double.parseDouble(v));
+                break;
+            case ("вес"):
+                super.setWeight(Double.parseDouble(v));
+                break;
+            case ("число спутников"):
+                satellite = Integer.parseInt(v);
+                break;
+            case ("период обращения"):
+                period = Integer.parseInt(v);
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 class Star extends Cosmic_body{
-    private double luminosity; //Светимость
-    private String opening_date; //Дата открытия
-
-    //Конструктор
+    private double luminosity;
+    private String opening_date;
     public Star(String name, int distance_to_sun, double diameter, String opening_date, double weight, double luminosity){
         super(name, distance_to_sun, diameter, weight);
         this.luminosity = luminosity;
         this.opening_date = opening_date;
     }
 
-    //Получить значение светимости
-    private double getLuminosity(){
+    public double getLuminosity(){
         return luminosity;
     }
 
-    //Получить дату открытия
     public String getOpening_date(){
         return opening_date;
     }
 
-    //Переопределение метода класса Object
+    public void setLuminosity(double l){
+        luminosity = l;
+    }
+
+    public void setOpening_date(String o){
+        opening_date = o;
+    }
+
     @Override
     public String toString(){
         return "Звезда: " + super.getName() + "\nРасстояние до солнца (млн км): " + super.getDistance_to_sun() +
                 "\nДиаметр: " + super.getDiameter() + "\nМасса (10^24 кг): " +
                 super.getWeight() + "\nДата открытия: " + this.opening_date + "\nСветимость (10^26 Вт): " + this.luminosity + "\n\n";
+    }
+
+    public void edit(String f, String v){
+        switch (f) {
+            case ("имя"):
+                super.setName(v);
+                break;
+            case ("расстояние до солнца"):
+                super.setDistance_to_sun(Integer.parseInt(v));
+                break;
+            case ("диаметр"):
+                super.setDiameter(Double.parseDouble(v));
+                break;
+            case ("дата открытия"):
+                opening_date = v;
+                break;
+            case ("вес"):
+                super.setWeight(Double.parseDouble(v));
+                break;
+            case ("светимость"):
+                luminosity = Double.parseDouble(v);
+                break;
+            default:
+                break;
+        }
     }
 }
