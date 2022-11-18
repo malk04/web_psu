@@ -4,3 +4,7 @@ abvg, abvg, ffff  ->  ffff, ggggg, abvg, ffff, ifigi  ->  L1 не входит �
 jfghjsf, fdjng  ->  jhdfjhsb, jdbsh, jhbdhs  ->  L1 не входит в L2
 one, two  ->  one, two, free  ->  L1 входит в L2
 apple, orange, water  ->  rectangle, window, apple, tree, orange, water  ->  L1 входит в L2
+5, 7, 8, 9, 10  ->  5, 7, 8, 9, 10, 7, 9  ->  L1 входит в L2
+786876786875875  ->  7878  ->  L1 не входит в L2
+5  ->  5  ->  L1 входит в L2
+6, 7  ->  1, 6, 9, 6, 7, 8, 6  ->  L1 входит в L2
