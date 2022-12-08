@@ -1,22 +1,18 @@
 package ru.laba5.cars.pojo;
 
+import lombok.Data;
+
+import javax.validation.constraints.NotBlank;
+
+@Data
 public class LoginRequest {
+    @NotBlank(message = "Заполните поле")
     private String username;
+    @NotBlank(message = "Заполните поле")
     private String password;
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
+    public LoginRequest(String username, String password) {
         this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
         this.password = password;
     }
 }

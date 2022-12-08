@@ -1,17 +1,12 @@
 package ru.laba5.cars.pojo;
 
-public class MessageResponse {
+import lombok.Data;
+
+@Data
+public class MessageResponse{
     private String message;
 
-    public MessageResponse(String message) {
-        this.message = message;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
+    public MessageResponse(String message){
         this.message = message;
     }
 }

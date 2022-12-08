@@ -1,60 +1,27 @@
 package ru.laba5.cars.pojo;
 
-import java.util.Set;
+import lombok.Data;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+@Data
 public class SignupRequest {
+    @NotBlank(message = "Заполните поле")
     private String username;
+
+    @NotBlank(message = "Заполните поле")
+    @Size(min = 4, max = 20, message = "Пароль должен содержать от 4 до 20 символов")
     private String password;
+
+    @NotBlank(message = "Заполните поле")
+    @Email(message = "Неправильная почта")
     private String email;
-    private int visits;
-    private String image;
-    private Set<String> roles;
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
+    public SignupRequest(String username, String password, String email) {
         this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getVisits() {
-        return visits;
-    }
-
-    public void setVisits(int visits) {
-        this.visits = visits;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public Set<String> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<String> roles) {
-        this.roles = roles;
     }
 }
