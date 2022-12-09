@@ -1,10 +1,10 @@
-$('document').ready(function(){
+document.addEventListener( "DOMContentLoaded", function(){
     //get_info_from_server();
-    $(document.log).submit(function(){
+    document.getElementById("log").addEventListener("submit",function(){
         check_login();
     });
-    document.getElementById("login").addEventListener("input", function(){
-        check_vvod("login");
+    document.getElementById("username").addEventListener("input", function(){
+        check_vvod("username");
     });
     document.getElementById("password").addEventListener("input", function(){
         check_vvod("password");
@@ -12,33 +12,29 @@ $('document').ready(function(){
 });
 
 function check_login(){
-    let login = document.getElementById("login").value;
+    let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
-    let xnr = new XMLHttpRequest();
-    xnr.open("POST", "php/check_login.php");
-    xnr.onload = function(){
-        console.log(xnr.responseText);
-        errors = JSON.parse(xnr.responseText);
-        error(errors);
-        if (errors['successful']){
-            window.location.replace('html/lk.html');
-        };
-    };
     let login_data = {
-        login: login,
+        username: username,
         password: password
     };
-    xnr.send(JSON.stringify(login_data));
-};
 
-function error(data){
-    let log_err = document.getElementById("log-error");
-    if (data['login_err'] != ""){
-        log_err.innerHTML = data['login_err'];
-    };
-    if (data['password_err'] != ""){
-        log_err.innerHTML = data['password_err'];
-    }; 
+    const url = 'http://localhost:8081/api/auth/signin'
+
+    fetch(url, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(login_data)
+    }).then (async response => {
+        if (response.ok) {
+            let data = await response.json()
+            sessionStorage.setItem('token', data.message)
+            document.location.replace('../html/lk.html')
+        } else if (response.status == 401) {
+            let log_err = document.getElementById("log-error");
+            log_err.innerHTML = 'Неверное имя пользователя или пароль';
+        }
+        });
 };
 
 function check_vvod(id){
@@ -56,15 +52,3 @@ function check_vvod(id){
         input.value = res;
     }
 };
-
-function get_info_from_server(){
-    let xnr = new XMLHttpRequest();
-    xnr.open("POST", "php/login.php");
-    xnr.onload = function(){
-        let values = JSON.parse(xnr.responseText);
-        document.getElementById("login").setAttribute("value", values["login_val"]);
-        document.getElementById("password").setAttribute("value", values["password_val"]);
-    };
-    xnr.send();
-};
-

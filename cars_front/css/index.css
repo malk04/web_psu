@@ -1,0 +1,30 @@
+body{
+    background: #e6e1de;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background: #373c43;
+}
+
+#auth{
+    margin-left: auto;
+    margin-right: 0;
+    max-width: 400px;
+    padding-top: 20px;
+}
+
+.auth-button {
+    width: 180px;
+    padding: 10px;
+    background: #595e66;
+    text-align: center;
+    font-size: 16px;
+    border: 0ch;
+    color: #fff;
+}
+
+.auth-button:hover {
+    background: #70767d;
+}

@@ -20,6 +20,7 @@ body {
     background: white;
     margin: auto;
     margin-top: 180px;
+    opacity: 0.85;
 }
 
 h2{
@@ -54,4 +55,10 @@ input{
 
 .a{
     color: #009959;
+}
+
+#log-error{
+    width:200px;
+    text-align: left;
+    margin-left: 55px;
 }

@@ -20,6 +20,7 @@ body {
     background: white;
     margin: auto;
     margin-top: 140px;
+    opacity: 0.85;
 }
 
 h2{
@@ -95,4 +96,5 @@ form{
     background: white;
     margin: auto;
     margin-top: 280px;
+    opacity: 0.85;
 }

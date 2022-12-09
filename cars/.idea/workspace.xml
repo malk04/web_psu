@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a9426c-8ee3-49bb-a87d-1cb63d965cd3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../cars_front/css/create_ad.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/html/create_ad.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cars_front/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/css/orders.css" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/css/ads.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/css/registration.css" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/css/registration.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/html/lk.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/html/lk.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/html/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/html/logout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/html/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/html/ads.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cars_front/html/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/html/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cars_front/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cars_front/js/check_registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/js/check_registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/js/check_login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/js/check_login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/js/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/js/ads.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +187,8 @@
       <workItem from="1670257729984" duration="575000" />
       <workItem from="1670512584147" duration="15940000" />
       <workItem from="1670564413342" duration="222000" />
-      <workItem from="1670578025631" duration="3488000" />
+      <workItem from="1670578025631" duration="5249000" />
+      <workItem from="1670606351052" duration="1982000" />
     </task>
     <servers />
   </component>
