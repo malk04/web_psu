@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a9426c-8ee3-49bb-a87d-1cb63d965cd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/exceptions/RegistrationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/exceptions/ValidationExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/models/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/JwtResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/MessageResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/MessageResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/SignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/SignupRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/service/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/service/UserDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +169,9 @@
       <workItem from="1670063930207" duration="41000" />
       <workItem from="1670247489877" duration="1482000" />
       <workItem from="1670257729984" duration="575000" />
-      <workItem from="1670512584147" duration="13411000" />
+      <workItem from="1670512584147" duration="15940000" />
+      <workItem from="1670564413342" duration="222000" />
+      <workItem from="1670578025631" duration="1330000" />
     </task>
     <servers />
   </component>

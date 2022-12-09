@@ -1,0 +1,105 @@
+body {
+    font-size: 16px;
+    background: #c6ffdd;
+    background: linear-gradient( to right, #c0ffba, #b5faff, #cec9ff );
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+}
+
+#zagolovok{
+    text-align: center;
+    padding-bottom: 60px;
+    font-family: Montserrat, sans-serif;
+}
+
+.main{ 
+    width: 480px;
+    flex-wrap: wrap;
+    gap: 10px 0;
+    padding: 5px;
+    text-align: center;
+    height: 700px;
+    background: white;
+    margin: auto;
+}
+
+h2{
+    font-size: 26px;
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 30px;
+}
+
+#button {
+    width: 150px;
+    padding: 5px;
+    background: #aca5f0;
+    text-align: center;
+    border: 0ch;
+    min-width: 98px;
+    color: #fff;
+    margin-left: 90px;
+}
+
+#button:hover {
+    background: blueviolet;
+}
+
+input{
+    padding:10px;
+    margin:10px 0;
+    width:300px;
+    margin-bottom: 20px;
+}
+
+.error{
+    color: #f33;
+    margin: 0;
+    margin-right: 80px;
+    font-size: 14px;
+    text-align: left;
+}
+
+form{
+    text-align: left;
+    margin-left: 80px;
+    font-size: 18px;
+}
+
+#events{
+    text-align: center;
+}
+
+#tema{
+    width: 300px;
+}
+
+.inputs{
+    width: 20px;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+#r{
+    margin: 10px 0;
+    margin-bottom: 20px;
+}
+
+label{
+    font-size: 22px;
+}
+
+#rr{
+    font-size: 18px;
+}
+
+h3{
+    font-size: 24px;
+    font-family: Montserrat, sans-serif;
+    color: darkorchid;
+}
+
+#log{
+    margin: 0;
+    color: #6d0e99;
+}

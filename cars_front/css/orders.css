@@ -1,0 +1,54 @@
+body {
+    font-size: 16px;
+    background: #c6ffdd;
+    background: linear-gradient( to right, #c0ffba, #b5faff, #cec9ff );
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+}
+
+#zagolovok{
+    text-align: center;
+    padding-bottom: 10px;
+    font-family: Montserrat, sans-serif;
+}
+
+table {
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 10px 5px;
+    background: #caadf7;
+    color: #000;
+    border: 0px solid #ECE9E0;
+    width: 800px;
+    margin: auto;
+}
+
+th {
+    font-size: 18px;
+    padding: 10px;
+    width: 33%;
+}
+
+td {
+    background: #e7d9fffd;
+    padding: 10px;
+    width: 33%;
+}
+
+h2{
+    font-size: 26px;
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #7a24bdfd;
+}
+
+p{
+    text-align: center;
+}
+
+#log{
+    margin: 0;
+    color: #6d0e99;
+}

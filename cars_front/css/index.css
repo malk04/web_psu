@@ -1,0 +1,53 @@
+body {
+    font-size: 16px;
+    background: #c6ffdd;
+    background: linear-gradient( to right, #c0ffba, #b5faff, #cec9ff );
+    justify-content: center;
+    align-items: center;
+}
+
+#zagolovok{
+    text-align: center;
+    padding-bottom: 60px;
+    font-family: Montserrat, sans-serif;
+}
+
+.main{ 
+    width: 330px;
+    flex-wrap: wrap;
+    gap: 10px 0;
+    padding: 5px;
+    text-align: center;
+    height: 330px;
+    background: white;
+    margin: auto;
+}
+
+h2{
+    font-size: 26px;
+    font-family: Montserrat, sans-serif;
+}
+
+#button {
+    width: 98px;
+    padding: 5px;
+    background: #aca5f0;
+    text-align: center;
+    border: 0ch;
+    min-width: 98px;
+    color: #fff;
+}
+
+#button:hover {
+    background: blueviolet;
+}
+
+input{
+    padding:10px;
+    margin:10px 0;
+}
+
+.error{
+    color: #f33;
+    margin: 0;
+}
