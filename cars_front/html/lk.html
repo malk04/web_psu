@@ -15,17 +15,17 @@
         </div>
         <div class="data">
             <div class="user-data">
-                <p>Здравствуйте, <span class="username">user</span></p>
-                <p>Число входов в аккаунт: <span class="visits">user</span></p>
-                <p>Дата: <span class="now-date">user</span></p>
-                <p>Время: <span class="now-time">user</span></p>
+                <p>Здравствуйте, <span id="username"></span></p>
+                <p>Число входов в аккаунт: <span id="visits">user</span></p>
+                <p>Дата: <span id="now-date">user</span></p>
+                <p>Время: <span id="now-time">user</span></p>
             </div>
             <div class="for_buttons">
-                <button class="lk-button" id="hide" onclick="document.location=''">ЛК администратора</button>
-                <button class="lk-button" id="hide" onclick="document.location=''">ЛК модератора</button>
-                <button class="lk-button" onclick="document.location='html/create_ad.html'">Создать заявку</button>
-                <button class="lk-button" onclick="document.location='html/ads.html'">Посмотреть заявки</button>
-                <button class="lk-button" onclick="document.location='html/logout.html'">Выйти</button>
+                <button class="lk-button" id="hide" name="lk-admin" onclick="document.location=''">ЛК администратора</button>
+                <button class="lk-button" id="hide" name="lk-moderator" onclick="document.location=''">ЛК модератора</button>
+                <button class="lk-button" onclick="document.location='create_ad.html'">Создать заявку</button>
+                <button class="lk-button" onclick="document.location='ads.html'">Посмотреть заявки</button>
+                <button class="lk-button" onclick="document.location='logout.html'">Выйти</button>
             </div>
         </div>
     </div>
