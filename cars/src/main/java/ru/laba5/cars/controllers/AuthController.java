@@ -1,7 +1,10 @@
 package ru.laba5.cars.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import ru.laba5.cars.exceptions.RegistrationException;
 import ru.laba5.cars.pojo.*;
@@ -24,5 +27,18 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody @Valid SignupRequest signupRequest) throws RegistrationException {
         return ResponseEntity.ok(authService.registerUser(signupRequest));
+    }
+
+    @GetMapping("/logout")
+    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_MODERATOR') or hasRole('ROLE_ADMIN')")
+    public ResponseEntity<?> logout() {
+        SecurityContextHolder.getContext().setAuthentication(null);
+        return ResponseEntity.status(HttpStatus.OK).body(new MessageResponse("Выход выполнен успешно"));
+    }
+
+    @GetMapping("/lk")
+    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_MODERATOR') or hasRole('ROLE_ADMIN')")
+    public ResponseEntity<?> getDataForLk() {
+        return ResponseEntity.status(HttpStatus.OK).body(authService.getDataForLk());
     }
 }

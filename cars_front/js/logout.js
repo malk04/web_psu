@@ -1,18 +1,18 @@
-$('document').ready(function(){
-    get_sess();
+document.addEventListener( "DOMContentLoaded",function(){
+    remove_session();
 });
 
-function get_sess(){
-    let xnr = new XMLHttpRequest();
-    xnr.open("POST", "../php/logout.php");
-    xnr.onload = function(){
-        if (!xnr.responseText){
-            window.location.replace('index.html')
-        } else {
-            setTimeout(() => {
-                window.location.replace('../index.html');
-            }, 100);
-        };
-    };
-    xnr.send();
+function remove_session(){
+    const logout_url = 'http://localhost:8081/api/auth/logout'
+    fetch(logout_url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+        }
+    }).then(response => {
+        if (response.ok) {
+            document.location.replace('../index.html')
+        }
+    })
 };

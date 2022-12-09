@@ -78,4 +78,11 @@ public class AuthService {
 
         return jwt;
     }
+
+    public LkResponse getDataForLk() {
+        Object principal = SecurityContextHolder.getContext()
+                .getAuthentication().getPrincipal();
+        UserDetailsImpl userDetails = (UserDetailsImpl) principal;
+        return new LkResponse(userDetails.getUsername(), userDetails.getVisits(), userDetails.getImage(), userDetails.getAuthorities().toString());
+    }
 }
