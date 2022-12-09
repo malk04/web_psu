@@ -1,15 +1,13 @@
 body {
     font-size: 16px;
-    background: #c6ffdd;
-    background: linear-gradient( to right, #c0ffba, #b5faff, #cec9ff );
+    background-image: url(../images/fon.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height:100%;
+    background-size:cover;
     justify-content: center;
     align-items: center;
-}
-
-#zagolovok{
-    text-align: center;
-    padding-bottom: 60px;
-    font-family: Montserrat, sans-serif;
 }
 
 .main{ 
@@ -21,6 +19,7 @@ body {
     height: 330px;
     background: white;
     margin: auto;
+    margin-top: 180px;
 }
 
 h2{
@@ -31,7 +30,7 @@ h2{
 #button {
     width: 98px;
     padding: 5px;
-    background: #aca5f0;
+    background: #88cfad;
     text-align: center;
     border: 0ch;
     min-width: 98px;
@@ -39,15 +38,20 @@ h2{
 }
 
 #button:hover {
-    background: blueviolet;
+    background: #4bad7e;
 }
 
 input{
     padding:10px;
     margin:10px 0;
+    width:200px;
 }
 
 .error{
     color: #f33;
     margin: 0;
+}
+
+.a{
+    color: #009959;
 }

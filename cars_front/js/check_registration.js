@@ -34,7 +34,7 @@ function check_registration(){
         body: JSON.stringify(registration_data)
     }).then(async response => {
         if (response.ok) {
-            document.getElementById("successful").innerHTML = `<h2>Регистрация прошла успешно!</h2><button id="button" class="bb" onclick="document.location='../index.html'">Войти</button>`;
+            document.getElementById("successful").innerHTML = `<div class="result"><h3>Регистрация прошла успешно!</h3><button id="button" class="bb" onclick="document.location='login.html'">Войти</button></div>`;
         } else if (response.status == 400) {
             let data = await response.json()
             let fields = Object.keys(data)

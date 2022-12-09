@@ -10,12 +10,6 @@ body {
     align-items: center;
 }
 
-#zagolovok{
-    text-align: center;
-    padding-bottom: 60px;
-    font-family: Montserrat, sans-serif;
-}
-
 .main{ 
     width: 320px;
     flex-wrap: wrap;
@@ -29,6 +23,11 @@ body {
 }
 
 h2{
+    font-size: 26px;
+    font-family: Montserrat, sans-serif;
+}
+
+h3{
     font-size: 26px;
     font-family: Montserrat, sans-serif;
 }
@@ -84,4 +83,16 @@ form{
 
 .a{
     color: #009959;
+}
+
+.result{
+    width: 600px;
+    flex-wrap: wrap;
+    gap: 10px 0;
+    padding: 5px;
+    text-align: center;
+    height: 140px;
+    background: white;
+    margin: auto;
+    margin-top: 280px;
 }
