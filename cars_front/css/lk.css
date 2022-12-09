@@ -1,33 +1,33 @@
 body {
     font-size: 16px;
-    background: #c6ffdd;
-    background: linear-gradient( to right, #c0ffba, #b5faff, #cec9ff );
+    background-image: url(../images/fon_lk.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height:100%;
+    background-size:cover;
     justify-content: center;
     align-items: center;
-    height: 150vh;
 }
 
-#zagolovok{
-    text-align: center;
-    padding-bottom: 60px;
-    font-family: Montserrat, sans-serif;
+p{
+    font-size: 30px;
+    margin: 0;
+    padding: 5px;
 }
 
 .main{ 
-    width: 480px;
+    width: 900px;
     flex-wrap: wrap;
     gap: 10px 0;
     padding: 5px;
-    text-align: center;
-    height: 700px;
-    background: white;
+    /*text-align: center;*/
+    height: 500px;
+    background: rgba(255, 255, 255, 0.7);
     margin: auto;
-}
-
-h2{
-    font-size: 26px;
-    font-family: Montserrat, sans-serif;
-    margin-bottom: 30px;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: minmax(300px, 33%) 1fr;
 }
 
 #button {
@@ -45,61 +45,63 @@ h2{
     background: blueviolet;
 }
 
-input{
-    padding:10px;
-    margin:10px 0;
-    width:300px;
-    margin-bottom: 20px;
+.for_foto{
+    /*background: #caadf7;*/
 }
 
-.error{
-    color: #f33;
-    margin: 0;
-    margin-right: 80px;
-    font-size: 14px;
-    text-align: left;
+.avatar{
+    width: 280px;
+    height: 280px;
+    background: #bec5c8;
+    margin: 10px;
+}
+.data{
+    position: relative;
 }
 
-form{
-    text-align: left;
-    margin-left: 80px;
-    font-size: 18px;
+.for_buttons{
+    width: 210px;
+    height: 195px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
-#events{
-    text-align: center;
-}
-
-#tema{
-    width: 300px;
-}
-
-.inputs{
-    width: 20px;
+.lk-button{
+    width: 200px;
     padding: 5px;
-    margin: 5px 0;
+    background: #575761;
+    text-align: center;
+    border: 0ch;
+    color: #fff;
+    margin: 5px;
+    font-size: 16px;
 }
 
-#r{
-    margin: 10px 0;
-    margin-bottom: 20px;
+.lk-button:hover{
+    background: #808f9f;
 }
 
-label{
-    font-size: 22px;
+.input-foto{
+    width: 280px;
+    padding: 5px;
+    background: #575761;
+    text-align: center;
+    border: 0ch;
+    color: #fff;
+    margin: 10px;
+    font-size: 16px;
 }
 
-#rr{
-    font-size: 18px;
+.input-foto:hover{
+    background: #808f9f;
 }
 
-h3{
-    font-size: 24px;
-    font-family: Montserrat, sans-serif;
-    color: darkorchid;
+.user-data{
+    height: 280px;
+    margin: 10px;
 }
 
-#log{
-    margin: 0;
-    color: #6d0e99;
+#hide{
+    visibility: hidden;
 }

@@ -8,56 +8,27 @@
         <script src="../js/lk.js" type="text/javascript"></script>
 </head>
 <body id="page">
-    <header>
-        <span id="now_login"> 
-                Вы зашли как: <span id="login_lk"></span><br>
-                <a href="logout.html">Выйти</a>
-        </span>
-    </header>
-	<div id="zagolovok"><h1>Лабораторная работа №6. Установка web-сервера.
-                <br>Форма заказа праздника</h1>
+   	<div class="main" id="main">
+        <div class="for_foto">
+            <div class="avatar"></div>
+            <button class="input-foto">Загрузить фото</button>
         </div>
-    
-	<div class="main" id="main">
-            <h2>Заполните форму</h2>
-            <h3 class="error_ord" id="order-error"></h3>
-            <form id="zakaz" name="zakaz" onsubmit="return false">
-                <div>
-                    <label>Введите тематику мероприятия:</label><br>
-                    <input type="text" name="tema" id="tema" required placeholder="Не более 50 символов"><br>
-                    <p class="error" id="tema-error"></p>
-                </div>
-                <div>
-                    <label>Ведите количество гостей:</label><br>
-                    <input type="number" name="guests" id="guests" required min="1"><br>
-                    <p class="error" id="guests-error"></p>
-                </div>
-                <div>
-                    <label>Введите дату мероприятия:</label><br>
-                    <input type="date" name="date" id="date" required><br>
-                    <p class="error" id="date-error"></p>
-                </div>
-                <div>
-                    <label>Выберите тип оплаты:</label><br>
-                    <div id="r">
-                    <label id="rr">
-                        <input type="radio" name="pay" id="pay1" value="pay1" class="inputs" required>Оплата банковской картой</input>
-                    </label><br>
-                    <label id="rr">
-                        <input type="radio" name="pay" id="pay2" value="pay2" class="inputs" required>Оплата наличными</input>
-                    </label><br>
-                    </div>
-                </div>
-                <div>
-                    <label>Напишите ваши пожелания:</label><br>
-                    <input type="text" name="wishes" id="wishes" placeholder="Не более 100 символов"><br>
-                    <p class="error" id="wishes-error"></p>
-                </div>
-                <input type="submit" id="button" value="Отправить">
-            </form>
-            <p id="result"></p>
-            
+        <div class="data">
+            <div class="user-data">
+                <p>Здравствуйте, <span class="username">user</span></p>
+                <p>Число входов в аккаунт: <span class="visits">user</span></p>
+                <p>Дата: <span class="now-date">user</span></p>
+                <p>Время: <span class="now-time">user</span></p>
+            </div>
+            <div class="for_buttons">
+                <button class="lk-button" id="hide" onclick="document.location=''">ЛК администратора</button>
+                <button class="lk-button" id="hide" onclick="document.location=''">ЛК модератора</button>
+                <button class="lk-button" onclick="document.location='html/create_ad.html'">Создать заявку</button>
+                <button class="lk-button" onclick="document.location='html/ads.html'">Посмотреть заявки</button>
+                <button class="lk-button" onclick="document.location='html/logout.html'">Выйти</button>
+            </div>
         </div>
-    <p id="events"><a href = "ads.html">Посмотреть ранее заказанные мероприятия</a></p>
+    </div>
+
 </body>
 </html>

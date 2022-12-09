@@ -17,10 +17,9 @@ body {
     padding: 5px;
     text-align: center;
     height: 330px;
-    background: white;
     margin: auto;
     margin-top: 180px;
-    opacity: 0.85;
+    background: rgba(255, 255, 255, 0.85);
 }
 
 h2{
