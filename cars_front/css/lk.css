@@ -98,6 +98,7 @@ p{
 }
 
 .user-data{
+    padding-top: 30px;
     height: 280px;
     margin: 10px;
 }
@@ -150,9 +151,9 @@ p{
 }
 .avatar-wrapper .upload-button .fa-arrow-circle-up{
     position: absolute;
-    font-size: 220px;
-    top: 0;
-    left: 0;
+    font-size: 230px;
+    top: -15px;
+    left: 1px;
     text-align: center;
     opacity: 0;
     transition: all .3s ease;
