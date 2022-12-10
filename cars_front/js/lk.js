@@ -92,6 +92,8 @@ function upload_avatar(){
         } else if (response.status == 417) {
             let data = await response.json();
             document.querySelector('.error').innerHTML = data.message;
+        } else if (response.status == 400) {
+            document.querySelector('.error').innerHTML = "Максимальный объем 10Мб";
         }
     })
 }
