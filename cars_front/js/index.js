@@ -1,4 +1,5 @@
 document.addEventListener( "DOMContentLoaded", function(){
+    console.log(sessionStorage.getItem('token'))
     if (sessionStorage.getItem('token') != ''){
         document.querySelector('header').innerHTML =
             '<div id="auth">\n' +

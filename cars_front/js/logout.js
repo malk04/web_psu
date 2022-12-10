@@ -12,7 +12,8 @@ function remove_session(){
         }
     }).then(response => {
         if (response.ok) {
-            document.location.replace('../index.html')
+            sessionStorage.setItem('token', '');
+            document.location.replace('../index.html');
         }
     })
 };
