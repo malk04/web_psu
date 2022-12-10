@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a9426c-8ee3-49bb-a87d-1cb63d965cd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/exceptions/FileSizeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cars_front/avatars/0f875850-2b9f-4274-bec5-72fb46b00914" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cars_front/avatars/6d8e6523-3aed-44dd-bf45-d27e7d6686d6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cars_front/avatars/9eb648a9-4241-47da-acd9-5b7a2128a602" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cars_front/avatars/f000d5bc-d2eb-4c7d-acc9-5d9002f984ff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/avatars/1d255638-1b48-41b6-b959-3589092a02f6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/exceptions/RegistrationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/exceptions/RegistrationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cars_front/avatarsnull" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/css/lk.css" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/css/lk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/html/lk.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/html/lk.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cars_front/js/lk.js" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/js/lk.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +178,7 @@
       <workItem from="1670578025631" duration="5249000" />
       <workItem from="1670606351052" duration="8263000" />
       <workItem from="1670653869650" duration="1558000" />
-      <workItem from="1670692421369" duration="7077000" />
+      <workItem from="1670692421369" duration="7733000" />
     </task>
     <servers />
   </component>

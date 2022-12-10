@@ -75,7 +75,6 @@ function upload_avatar(){
     let image = document.querySelector('.file-upload').files[0];
     let formData = new FormData();
     formData.append('image', image);
-    console.log(formData);
     fetch(upload_avatar_url, {
         method: 'PUT',
         body: formData,
