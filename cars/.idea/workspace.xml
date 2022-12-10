@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a9426c-8ee3-49bb-a87d-1cb63d965cd3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/controllers/AvatarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/avatars/aa65003d-e9ef-4099-9fa9-cf51632694fe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/avatars/bfd9604e-8d58-46c6-9e3b-8a1a70304869" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/avatarsnull" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/css/lk.css" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/css/lk.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cars_front/html/lk.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/html/lk.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/js/lk.js" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/js/lk.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +181,7 @@
       <workItem from="1670578025631" duration="5249000" />
       <workItem from="1670606351052" duration="8263000" />
       <workItem from="1670653869650" duration="1558000" />
+      <workItem from="1670692421369" duration="4848000" />
     </task>
     <servers />
   </component>
