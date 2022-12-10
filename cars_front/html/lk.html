@@ -5,7 +5,7 @@
 	<title>Cars</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../css/lk.css" rel="stylesheet" type="text/css"/>
-        <script src="../js/lk.js" type="text/javascript"></script>
+
 </head>
 <body id="page">
    	<div class="main" id="main">
@@ -17,18 +17,18 @@
             <div class="user-data">
                 <p>Здравствуйте, <span id="username"></span></p>
                 <p>Число входов в аккаунт: <span id="visits">user</span></p>
-                <p>Дата: <span id="now-date">user</span></p>
-                <p>Время: <span id="now-time">user</span></p>
+                <p>Дата: <span class="now-date">user</span></p>
+                <p>Время: <span class="now-time">user</span></p>
             </div>
             <div class="for_buttons">
-                <button class="lk-button" id="hide" name="lk-admin" onclick="document.location=''">ЛК администратора</button>
-                <button class="lk-button" id="hide" name="lk-moderator" onclick="document.location=''">ЛК модератора</button>
+                <button class="lk-button" id="hide" name="lk-admin">ЛК администратора</button>
+                <button class="lk-button" id="hide" name="lk-moderator">ЛК модератора</button>
                 <button class="lk-button" onclick="document.location='create_ad.html'">Создать заявку</button>
                 <button class="lk-button" onclick="document.location='ads.html'">Посмотреть заявки</button>
                 <button class="lk-button" onclick="document.location='logout.html'">Выйти</button>
             </div>
         </div>
     </div>
-
+    <script src="../js/lk.js" type="text/javascript"></script>
 </body>
 </html>

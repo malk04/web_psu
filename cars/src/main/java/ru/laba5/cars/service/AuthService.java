@@ -85,4 +85,9 @@ public class AuthService {
         UserDetailsImpl userDetails = (UserDetailsImpl) principal;
         return new LkResponse(userDetails.getUsername(), userDetails.getVisits(), userDetails.getAuthorities().toString());
     }
+
+    public DataTime getDataTime(){
+        DataTime dt = new DataTime();
+        return new DataTime();
+    }
 }

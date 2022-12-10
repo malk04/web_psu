@@ -41,4 +41,10 @@ public class AuthController {
     public ResponseEntity<?> getDataForLk() {
         return ResponseEntity.status(HttpStatus.OK).body(authService.getDataForLk());
     }
+
+    @GetMapping("/datetime")
+    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_MODERATOR') or hasRole('ROLE_ADMIN')")
+    public ResponseEntity<?> getDateTime() {
+        return ResponseEntity.status(HttpStatus.OK).body(authService.getDataTime());
+    }
 }
