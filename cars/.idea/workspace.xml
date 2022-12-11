@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d6a9426c-8ee3-49bb-a87d-1cb63d965cd3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/service/AuthService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +175,8 @@
       <workItem from="1670606351052" duration="8263000" />
       <workItem from="1670653869650" duration="1558000" />
       <workItem from="1670692421369" duration="9009000" />
-      <workItem from="1670778895080" duration="1340000" />
+      <workItem from="1670778895080" duration="1515000" />
+      <workItem from="1670792355144" duration="341000" />
     </task>
     <servers />
   </component>

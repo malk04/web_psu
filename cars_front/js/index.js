@@ -1,6 +1,5 @@
 document.addEventListener( "DOMContentLoaded", function(){
-    if (sessionStorage.getItem('token') != 'null'){
-        console.log('hjkhl')
+    if (sessionStorage.getItem('token') != 'null' && sessionStorage.getItem('token') != null){
         document.querySelector('header').innerHTML =
             '<div id="auth">\n' +
             '    <button class="auth-button" onclick="document.location=\'html/lk.html\'">Личный кабинет</button>\n' +
