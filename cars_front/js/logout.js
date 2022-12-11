@@ -1,4 +1,5 @@
 document.addEventListener( "DOMContentLoaded",function(){
+    console.log(sessionStorage.getItem('token'));
     remove_session();
 });
 
@@ -12,7 +13,7 @@ function remove_session(){
         }
     }).then(response => {
         if (response.ok) {
-            sessionStorage.setItem('token', '');
+            sessionStorage.setItem('token', null);
             document.location.replace('../index.html');
         }
     })

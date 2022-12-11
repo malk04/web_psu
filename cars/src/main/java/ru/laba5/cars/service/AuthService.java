@@ -16,7 +16,6 @@ import ru.laba5.cars.pojo.*;
 import ru.laba5.cars.repository.RoleRepository;
 import ru.laba5.cars.repository.UserRepository;
 
-import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
