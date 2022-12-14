@@ -75,7 +75,7 @@ function check_simvols(){
     let input = document.getElementById("email");
     let res = "";
     for (elem of input.value){
-        if (res.length <= 20){
+        if (res.length <= 40){
             res += elem;
         };
     };

@@ -11,9 +11,6 @@ import ru.laba5.cars.pojo.MessageResponse;
 import ru.laba5.cars.repository.UserRepository;
 import ru.laba5.cars.service.UserDetailsImpl;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;

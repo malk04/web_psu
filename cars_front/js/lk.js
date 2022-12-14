@@ -21,21 +21,32 @@ function get_lk_data() {
     }).then(async response => {
         if (response.ok) {
             let data = await response.json()
+            console.log(data)
             document.getElementById('username').innerHTML = data["username"];
             document.getElementById('visits').innerHTML = data["visits"];
             let userAuthorities = data["roles"];
-            switch (userAuthorities) {
-                case ('[ROLE_MODERATOR]'):
-                    document.querySelector("lk-moderator").removeAttribute('id');
-                    document.querySelector("lk-moderator").addEventListener("click", () => {document.location=''});
-                    break
-                case ('[ROLE_ADMIN]'):
-                    document.querySelector("lk-moderator").removeAttribute('id');
-                    document.querySelector("lk-moderator").addEventListener("click", () => {document.location=''});
-                    document.querySelector("lk-admin").removeAttribute('id');
-                    document.querySelector("lk-admin").addEventListener("click", () => {document.location=''});
-                    break
-            }
+            userAuthorities.forEach(role => {
+                switch (role["authority"]) {
+                    case ('ROLE_MODERATOR'):
+                        document.querySelector(".for_buttons").insertAdjacentHTML('afterbegin', '<button class="lk-button" name="lk-moderator">ЛК модератора</button>')
+                        document.querySelector('[name="lk-moderator"]').addEventListener("click", () => {document.location=''});
+                        break
+                    case ('ROLE_ADMIN'):
+                        document.querySelector(".for_buttons").insertAdjacentHTML('afterbegin', '<button class="lk-button" name="lk-admin">ЛК администратора</button>')
+                        document.querySelector('[name="lk-admin"]').addEventListener("click", () => {document.location=''});
+                        break
+                    case ('ROLE_USER'):
+                        document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button" name="create_ad">Создать заявку</button>');
+                        document.querySelector('[name="create_ad"]').addEventListener("click", () => {document.location=''});
+                        document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button" name="see_ads">Посмотреть заявки</button>');
+                        document.querySelector('[name="see_ads"]').addEventListener("click", () => {document.location=''});
+                        break
+                }
+            })
+            document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button" name="main">На главную</button>');
+            document.querySelector('[name="main"]').addEventListener("click", () => {document.location='../index.html'});
+            document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button" name="logout">Выйти</button>');
+            document.querySelector('[name="logout"]').addEventListener("click", () => {document.location='logout.html'});
         }
         ;
     });

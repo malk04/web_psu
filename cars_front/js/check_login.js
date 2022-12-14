@@ -42,7 +42,7 @@ function check_vvod(id){
     let proverka = new RegExp("^([a-z,A-Z,0-9])$");
     let res = "";
     for (element of input.value){
-        if (proverka.test(element) && res.length <= 20){
+        if (proverka.test(element) && res.length <= 40){
             res += element;
         };
     };

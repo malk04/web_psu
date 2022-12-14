@@ -62,10 +62,10 @@ p{
 
 .for_buttons{
     width: 210px;
-    height: 230px;
     position: absolute;
     bottom: 0;
     right: 0;
+    display: table;
 }
 
 .lk-button{
@@ -77,6 +77,8 @@ p{
     color: #fff;
     margin: 5px;
     font-size: 16px;
+    display: table-cell;
+    vertical-align: bottom;
 }
 
 .lk-button:hover{

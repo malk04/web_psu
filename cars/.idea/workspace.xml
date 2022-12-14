@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d6a9426c-8ee3-49bb-a87d-1cb63d965cd3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/controllers/AvatarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/controllers/AvatarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/LkResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/LkResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/html/lk.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/html/lk.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/js/check_login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/js/check_login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/js/check_registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/js/check_registration.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +182,9 @@
       <workItem from="1670653869650" duration="1558000" />
       <workItem from="1670692421369" duration="9009000" />
       <workItem from="1670778895080" duration="1515000" />
-      <workItem from="1670792355144" duration="341000" />
+      <workItem from="1670792355144" duration="658000" />
+      <workItem from="1670824782171" duration="772000" />
+      <workItem from="1671048324213" duration="1412000" />
     </task>
     <servers />
   </component>
