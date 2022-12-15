@@ -17,8 +17,6 @@ import ru.laba5.cars.configs.jwt.AuthEntryPointJwt;
 import ru.laba5.cars.configs.jwt.AuthTokenFilter;
 import ru.laba5.cars.service.UserDetailsServiceImpl;
 
-import javax.servlet.Filter;
-
 @EnableWebSecurity
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -59,6 +57,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/api/auth/**").permitAll()
                 .antMatchers("/api/test/**").permitAll()
+                .antMatchers("api/ads/**").permitAll()
                 .anyRequest().authenticated();
 
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);

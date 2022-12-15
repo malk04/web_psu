@@ -5,13 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a9426c-8ee3-49bb-a87d-1cb63d965cd3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/controllers/AdController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/exceptions/FileExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/exceptions/FileFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/exceptions/FileSaveException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/models/Ad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/models/AdFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/AdRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/AdResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/repository/AdFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/repository/AdRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/service/AdService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/ads_files/2e58336b-fe88-4aa9-bcbf-55efec0e2b6arazlinovka-1651602938514.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/ads_files/81de0c98-16ab-4537-8d53-3b14afaaa72crazlinovka-1651602938514.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/ads_files/89284f21-2ff2-44d3-aaab-c352463f61afЧеллендж-на-30-дней-3-шаблона_на_сайт.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/ads_files/9d13340b-7ef7-48b5-879d-dfbe1eda0b5drazlinovka-1651602938514.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/ads_files/a03fe652-07e0-4be4-b09b-b99e940994eerazlinovka-1651602938514.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/ads_files/b556ccd9-0d26-4e5b-a92d-6af908171f13Челлендж-на-30-дней-3-шаблона_на_сайт.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/ads_files/cdb9caef-3c98-4a97-bf2c-1ffaae07c4e6razlinovka-1651602938514.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cars_front/images/fon_ads.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/controllers/AvatarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/controllers/AvatarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/LkResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/pojo/LkResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/configs/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/configs/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/exceptions/FileSizeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/laba5/cars/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/css/ads.css" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/css/ads.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/css/create_ad.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/css/lk.css" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/css/lk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/html/ads.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/html/ads.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/html/create_ad.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../cars_front/html/lk.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/html/lk.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/js/ads.js" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/js/ads.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cars_front/js/check_login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/js/check_login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cars_front/js/check_registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/js/check_registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cars_front/js/lk.js" beforeDir="false" afterPath="$PROJECT_DIR$/../cars_front/js/lk.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +210,9 @@
       <workItem from="1670778895080" duration="1515000" />
       <workItem from="1670792355144" duration="658000" />
       <workItem from="1670824782171" duration="772000" />
-      <workItem from="1671048324213" duration="1412000" />
+      <workItem from="1671048324213" duration="1415000" />
+      <workItem from="1671083644665" duration="4238000" />
+      <workItem from="1671111052604" duration="14460000" />
     </task>
     <servers />
   </component>

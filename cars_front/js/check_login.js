@@ -1,5 +1,4 @@
 document.addEventListener( "DOMContentLoaded", function(){
-    //get_info_from_server();
     document.getElementById("log").addEventListener("submit",function(){
         check_login();
     });

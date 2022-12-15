@@ -6,7 +6,19 @@ document.addEventListener( "DOMContentLoaded", function(){
     document.querySelector(".file-upload").addEventListener('change', upload_avatar);
     document.querySelector(".upload-button").addEventListener('click', () => {
         document.querySelector(".file-upload").click();
-    })
+    });
+    document.querySelector("#ad").addEventListener("submit",function(){
+        sent_ad();
+    });
+
+    // popup close
+    const popupCloseIcon = document.querySelector('.close_popup');
+    if (popupCloseIcon){
+        popupCloseIcon.addEventListener('click', function (e){
+            popupClose(popupCloseIcon.closest('.popup'));
+            e.preventDefault();
+        })
+    }
 });
 
 
@@ -34,12 +46,30 @@ function get_lk_data() {
                     case ('ROLE_ADMIN'):
                         document.querySelector(".for_buttons").insertAdjacentHTML('afterbegin', '<button class="lk-button" name="lk-admin">ЛК администратора</button>')
                         document.querySelector('[name="lk-admin"]').addEventListener("click", () => {document.location=''});
+                        if (!document.querySelector('[name="lk-moderator"]')){
+                            document.querySelector(".for_buttons").insertAdjacentHTML('afterbegin', '<button class="lk-button" name="lk-moderator">ЛК модератора</button>')
+                            document.querySelector('[name="lk-moderator"]').addEventListener("click", () => {document.location=''});
+                        }
+                        if (!document.querySelector('[name="create_ad"]')){
+                            document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button popup-link" name="create_ad">Создать заявку</button>');
+                            document.querySelector('[name="create_ad"]').addEventListener('click', function (e) {
+                                popupOpen(document.querySelector('.popup'));
+                                e.preventDefault();
+                            })
+                        }
+                        if (!document.querySelector('[name="see_ads"]')){
+                            document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button" name="see_ads">Посмотреть заявки</button>');
+                            document.querySelector('[name="see_ads"]').addEventListener("click", () => {document.location='ads.html'});
+                        }
                         break
                     case ('ROLE_USER'):
-                        document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button" name="create_ad">Создать заявку</button>');
-                        document.querySelector('[name="create_ad"]').addEventListener("click", () => {document.location=''});
+                        document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button popup-link" name="create_ad">Создать заявку</button>');
+                        document.querySelector('[name="create_ad"]').addEventListener('click', function (e) {
+                            popupOpen(document.querySelector('.popup'));
+                            e.preventDefault();
+                        })
                         document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button" name="see_ads">Посмотреть заявки</button>');
-                        document.querySelector('[name="see_ads"]').addEventListener("click", () => {document.location=''});
+                        document.querySelector('[name="see_ads"]').addEventListener("click", () => {document.location='ads.html'});
                         break
                 }
             })
@@ -48,7 +78,6 @@ function get_lk_data() {
             document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button" name="logout">Выйти</button>');
             document.querySelector('[name="logout"]').addEventListener("click", () => {document.location='logout.html'});
         }
-        ;
     });
 }
 
@@ -96,13 +125,13 @@ function upload_avatar(){
             const get_avatar_url = 'http://localhost:8081/api/avatar/get';
             getAvatar(get_avatar_url);
             document.querySelector('.error').innerHTML = "";
-        } else if (response.status == 406) {
+        } else if (response.status === 406) {
             let data = await response.json();
             document.querySelector('.error').innerHTML = data.message;
-        } else if (response.status == 417) {
+        } else if (response.status === 417) {
             let data = await response.json();
             document.querySelector('.error').innerHTML = data.message;
-        } else if (response.status == 400) {
+        } else if (response.status === 400) {
             document.querySelector('.error').innerHTML = "Максимальный объем 10Мб";
         }
     })
@@ -124,4 +153,55 @@ function getAvatar(get_avatar_url) {
             document.querySelector('.error').innerHTML = data.message;
         }
     })
+}
+
+function popupOpen(currentPopup){
+    currentPopup.classList.add('open')
+}
+
+function popupClose(popupActive){
+    popupActive.classList.remove('open');
+    document.ad.reset();
+    document.getElementById("successful").innerHTML = "";
+}
+
+function sent_ad(){
+    document.getElementById("theme-error").innerHTML = "";
+    document.getElementById("text-error").innerHTML = "";
+    document.getElementById("file-error").innerHTML = "";
+    document.getElementById("successful").innerHTML = "";
+    let theme = document.getElementById("theme").value;
+    let text = document.getElementById("text").value;
+    let file = document.getElementById("file_ad").files[0];
+    let formData = new FormData();
+    formData.append('theme', theme);
+    formData.append('text', text);
+    if (file){
+        formData.append('file', file);
+    }
+
+    const create_url = 'http://localhost:8081/api/ads/create'
+
+    fetch(create_url, {
+        method: 'POST',
+        headers: {'Authorization': `Bearer ${sessionStorage.getItem('token')}`},
+        body: formData
+    }).then(async response => {
+        if (response.ok) {
+            let data = await response.json();
+            document.getElementById('successful').innerHTML = data.message;
+        } else if (response.status === 400) {
+            let data = await response.json();
+            let fields = Object.keys(data);
+            let errors = Object.values(data);
+            for (let i = 0; i < fields.length; i++) {
+                let errE = document.getElementById(`${fields[i]}-error`);
+                errE.innerHTML = errors[i].toString();
+            }
+        } else if (response.status === 406) {
+            let data = await response.json();
+            let errE = document.getElementById('file-error');
+            errE.innerHTML = data.error;
+        }
+    });
 }

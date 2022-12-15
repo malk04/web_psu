@@ -27,7 +27,26 @@
                 <p>Время: <span class="now-time"></span></p>
             </div>
             <div class="for_buttons">
-
+            </div>
+            <div class="popup">
+                <div class="popup_body">
+                    <div class="popup_content">
+                        <a class="popup_close close_popup">X</a>
+                        <div class="popup_title">Здесь вы можете подать заявку на наличие или на заказ автомобиля</div>
+                        <div class="popup_text">
+                            <form id="ad" name="ad" onsubmit="return false">
+                                <input type="text" name="theme" id="theme" required placeholder="Введите тему заявки"><br>
+                                <p class="error-ad" id="theme-error"></p>
+                                <textarea name="text" id="text" required placeholder="Введите текст заявки"></textarea><br>
+                                <p class="error-ad" id="text-error"></p>
+                                <input type="file" name="file_ad" id="file_ad" /><br>
+                                <p class="error-ad" id="file-error"></p>
+                                <p class="error-success" id="successful"></p>
+                                <input type="submit" id="sent" value="Отправить">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

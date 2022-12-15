@@ -86,7 +86,6 @@ public class AuthService {
     }
 
     public DataTime getDataTime(){
-        DataTime dt = new DataTime();
         return new DataTime();
     }
 }

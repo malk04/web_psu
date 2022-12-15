@@ -1,26 +1,59 @@
 body {
     font-size: 16px;
-    background: #c6ffdd;
-    background: linear-gradient( to right, #c0ffba, #b5faff, #cec9ff );
+    background-image: url(../images/fon_ads.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height:100%;
+    background-size:cover;
     justify-content: center;
     align-items: center;
-    height: 150vh;
+    user-select: none;
 }
 
-#zagolovok{
+header{
+    width: 100%;
+    height: 80px;
+    background: #373c43;
+}
+
+.main{
+    width: 1100px;
+    min-height: 600px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    margin: auto;
+}
+
+#but{
+    margin-left: auto;
+    margin-right: 0;
+    max-width: 200px;
+    padding-top: 20px;
+}
+
+.lk-button {
+    width: 180px;
+    padding: 10px;
+    background: #595e66;
     text-align: center;
-    padding-bottom: 10px;
-    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    border: 0ch;
+    color: #fff;
+}
+
+.lk-button:hover {
+    background: #70767d;
 }
 
 table {
     text-align: center;
     border-collapse: separate;
     border-spacing: 10px 5px;
-    background: #caadf7;
+    background: #9998a3;
     color: #000;
     border: 0px solid #ECE9E0;
-    width: 800px;
+    width: 1000px;
     margin: auto;
 }
 
@@ -31,24 +64,168 @@ th {
 }
 
 td {
-    background: #e7d9fffd;
+    background: #c8c7d4;
     padding: 10px;
     width: 33%;
 }
 
 h2{
+    padding-top: 50px;
     font-size: 26px;
     font-family: Montserrat, sans-serif;
     margin-bottom: 30px;
     text-align: center;
-    color: #7a24bdfd;
+    color: #000000;
 }
 
-p{
+.delete {
+    padding: 5px;
+    background: #b7b6c2;
     text-align: center;
+    font-size: 14px;
+    border: 0ch;
+    color: #000000;
 }
 
-#log{
-    margin: 0;
-    color: #6d0e99;
+.delete:hover {
+    background: #8c939c;
+    cursor: pointer;
+}
+
+.edit {
+    padding: 5px;
+    background: #b7b6c2;
+    text-align: center;
+    font-size: 14px;
+    border: 0ch;
+    color: #000000;
+}
+
+.edit:hover {
+    background: #8c939c;
+    cursor: pointer;
+}
+
+/*popup*/
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.6s ease 0s;
+}
+
+.popup.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup.open .popup_content{
+    transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+    opacity: 1;
+}
+
+.popup_body{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.popup_content{
+    background-color: #ffffff;
+    color: #000000;
+    width: 500px;
+    padding: 30px;
+    position: relative;
+    transition: all 0.6s ease 0s;
+    opacity: 0;
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+}
+
+.popup_close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.popup_close:hover{
+    color: #ff3333;
+}
+
+.popup_title{
+    font-size: 24px;
+    margin: 0px 0px 1em 0px;
+}
+
+.popup_text{
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme{
+    width: 450px;
+    font-size: 18px;
+    font-family: Arial;
+    margin: 10px;
+}
+
+#text{
+    width: 452px;
+    height: 150px;
+    font-size: 18px;
+    font-family: Arial;
+    margin: 10px;
+    resize: none;
+}
+
+#sent{
+    width: 200px;
+    padding: 5px;
+    background: #575761;
+    text-align: center;
+    border: 0ch;
+    color: #fff;
+    margin: 10px;
+    font-size: 16px;
+    margin-left: 140px;
+    margin-bottom: 0;
+}
+
+#sent:hover{
+    background: #808f9f;
+}
+
+#file_ad {
+    width: 450px;
+    font-size: 18px;
+    font-family: Arial;
+    margin: 10px;
+}
+
+.error-ad{
+    text-align: left;
+    color: #f33;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.error-success{
+    text-align: center;
+    color: #009959;
+    margin: 2px;
+    font-size: 22px;
 }
