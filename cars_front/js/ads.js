@@ -25,7 +25,6 @@ function get_info(){
     }).then(async response => {
         if (response.ok) {
             let data = await response.json();
-            console.log('data', data);
             if (data.length === 0){
                 document.getElementById("all_orders").innerHTML = "Вы не отправили ни одной заявки";
             } else {
@@ -76,15 +75,12 @@ function AddEventForDelete(){
 
 function AddEventForEdit(){
     let ed_buttons = document.querySelectorAll(".edit");
-    console.log(ed_buttons)
     ed_buttons.forEach(button => {
         button.classList.add("popup-link");
         button.addEventListener("click", function (e){
-            console.log(ads_arr)
             popupOpen(document.querySelector('.popup'));
             e.preventDefault();
             let id = e.target.id;
-            console.log(id);
             let edit_url = `http://localhost:8081/api/ads/edit/${id}`;
             reestablish_form(id, edit_url);
         })
@@ -103,10 +99,8 @@ function popupClose(popupActive){
 
 function reestablish_form(id, edit_url){
     let ad = ads_arr.find(a => a.id == id);
-    console.log(ads_arr, ad)
     document.querySelector("#theme").value = ad.theme;
     document.querySelector("#text").value = ad.text;
-    console.log(ad["fileName"])
     if (ad["fileName"] != ""){
         document.querySelector("#file-error").innerHTML = 'Вами ранее был добавлен файл "'+ad["fileName"]+'" Если хотите обновить его, прикрепите новый';
     }
