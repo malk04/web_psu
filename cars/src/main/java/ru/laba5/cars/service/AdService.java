@@ -36,12 +36,6 @@ public class AdService {
 
     private final String path = "D:\\3 semestr\\web_psu\\cars_front\\ads_files\\";
 
-    public AdService(UserRepository userRepository, AdRepository adRepository, AdFileRepository adFileRepository) {
-        this.userRepository = userRepository;
-        this.adRepository = adRepository;
-        this.adFileRepository = adFileRepository;
-    }
-
     public MessageResponse createAd(AdRequest adRequest) throws FileSaveException, FileFoundException {
         if (adRequest.getFile() == null) {
             throw new FileFoundException("Нет файла");

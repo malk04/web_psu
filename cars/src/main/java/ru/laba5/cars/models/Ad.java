@@ -13,6 +13,7 @@ public class Ad {
     private Long id;
 
     private String theme;
+    @Column(length = 4000)
     private String text;
     private String create_date;
 
@@ -23,7 +24,6 @@ public class Ad {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-
 
     public Ad(String theme, String text, String create_date) {
         this.theme = theme;

@@ -22,7 +22,6 @@ p{
     flex-wrap: wrap;
     gap: 10px 0;
     padding: 5px;
-    /*text-align: center;*/
     height: 500px;
     background: rgba(255, 255, 255, 0.7);
     margin: auto;

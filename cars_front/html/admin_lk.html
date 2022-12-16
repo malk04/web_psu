@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="../css/admin_lk.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="head_bl">
+        <p id="ac"></p>
+        <button class="return" id="exit" onclick="document.location='lk.html'">Вернуться назад</button>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr id="start">
+                <th> Логин </th>
+                <th> Почта </th>
+                <th> Число посещений </th>
+                <th> Роль </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody class="tb">
+
+        </tbody>
+    </table>
+    <div class="dropdown nu">
+        <button onclick="AddUser(this)" class="dropbtn">Добавить пользователя</button>
+        <div id="myDropdown" class="dropdown-content new">
+            <form id="reg" class="l" name="reg" onsubmit="return false">
+                <div class="l enter">
+                    <label class="l">Имя пользователя: <br><input class="l" type="text" name="username" id="username"
+                            required placeholder="Введите имя пользователя"></label><br>
+                    <p class="error" id="username-error"></p>
+                </div>
+                <div class="l enter">
+                    <label class="l">Пароль: <br><input class="l" type="text" name="password" id="password" required
+                            placeholder="Введите пароль"></label><br>
+                    <p class="error" id="password-error"></p>
+                </div>
+                <div class="l enter">
+                    <label class="l">E-mail: <br><input class="l" type="text" name="email" id="email" required
+                            placeholder="Введите email"></label><br>
+                    <p class="error" id="email-error"></p>
+                </div>
+                <input type="submit" class="l addbtn" id="button" value="Добавить">
+            </form>
+        </div>
+    </div>
+
+
+    <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="../js/admin_lk.js" type="text/javascript"></script>
+
+</body>
+
+</html>

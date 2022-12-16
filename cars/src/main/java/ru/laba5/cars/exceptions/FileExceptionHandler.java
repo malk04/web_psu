@@ -44,4 +44,12 @@ public class FileExceptionHandler {
         });
         return errorMap;
     }
+
+    @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
+    @ExceptionHandler(FileFormatException.class)
+    public Map<String, String> handleInvalidFileFormats(FileFormatException ex) {
+        Map<String, String> errorMap = new HashMap<>();
+        errorMap.put("error", ex.getMessage());
+        return errorMap;
+    }
 }

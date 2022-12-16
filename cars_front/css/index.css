@@ -1,5 +1,13 @@
 body{
-    background: #e6e1de;
+    background-image: url(../images/fon_index.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height:100%;
+    background-size:cover;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
 }
 
 header{
@@ -27,4 +35,43 @@ header{
 
 .auth-button:hover {
     background: #70767d;
+}
+
+.news{
+    display: grid;
+    place-items: center;
+}
+
+.block{
+    width: clamp(40%, 50%, 80%);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 20px;
+}
+
+.image-div{
+    width: 100%;
+}
+
+.title{
+    font-size: 30px;
+    margin: 15px 0px 10px 0px;
+    font-weight: 600;
+    font-family: Consolas;
+}
+
+.text{
+    font-size: 20px;
+}
+
+.footer{
+    display: flex;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.fraza{
+    font-style: italic;
 }

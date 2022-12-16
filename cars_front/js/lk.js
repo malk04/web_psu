@@ -1,4 +1,8 @@
 document.addEventListener( "DOMContentLoaded", function(){
+    document.getElementById("text").addEventListener("input", function(){
+        check_simvols();
+    });
+
     const get_avatar_url = 'http://localhost:8081/api/avatar/get';
     get_lk_data();
     Timer();
@@ -36,19 +40,22 @@ function get_lk_data() {
             console.log(data)
             document.getElementById('username').innerHTML = data["username"];
             document.getElementById('visits').innerHTML = data["visits"];
+            sessionStorage.setItem("name", data["username"]);
             let userAuthorities = data["roles"];
             userAuthorities.forEach(role => {
                 switch (role["authority"]) {
                     case ('ROLE_MODERATOR'):
-                        document.querySelector(".for_buttons").insertAdjacentHTML('afterbegin', '<button class="lk-button" name="lk-moderator">ЛК модератора</button>')
-                        document.querySelector('[name="lk-moderator"]').addEventListener("click", () => {document.location=''});
+                        if (!document.querySelector('[name="lk-moderator"]')){
+                            document.querySelector(".for_buttons").insertAdjacentHTML('afterbegin', '<button class="lk-button" name="lk-moderator">ЛК модератора</button>')
+                            document.querySelector('[name="lk-moderator"]').addEventListener("click", () => {document.location='moder_lk.html'});
+                        }
                         break
                     case ('ROLE_ADMIN'):
                         document.querySelector(".for_buttons").insertAdjacentHTML('afterbegin', '<button class="lk-button" name="lk-admin">ЛК администратора</button>')
-                        document.querySelector('[name="lk-admin"]').addEventListener("click", () => {document.location=''});
+                        document.querySelector('[name="lk-admin"]').addEventListener("click", () => {document.location='admin_lk.html'});
                         if (!document.querySelector('[name="lk-moderator"]')){
                             document.querySelector(".for_buttons").insertAdjacentHTML('afterbegin', '<button class="lk-button" name="lk-moderator">ЛК модератора</button>')
-                            document.querySelector('[name="lk-moderator"]').addEventListener("click", () => {document.location=''});
+                            document.querySelector('[name="lk-moderator"]').addEventListener("click", () => {document.location='moder_lk.html'});
                         }
                         if (!document.querySelector('[name="create_ad"]')){
                             document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button popup-link" name="create_ad">Создать заявку</button>');
@@ -63,13 +70,17 @@ function get_lk_data() {
                         }
                         break
                     case ('ROLE_USER'):
-                        document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button popup-link" name="create_ad">Создать заявку</button>');
-                        document.querySelector('[name="create_ad"]').addEventListener('click', function (e) {
-                            popupOpen(document.querySelector('.popup'));
-                            e.preventDefault();
-                        })
-                        document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button" name="see_ads">Посмотреть заявки</button>');
-                        document.querySelector('[name="see_ads"]').addEventListener("click", () => {document.location='ads.html'});
+                        if (!document.querySelector('[name="create_ad"]')){
+                            document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button popup-link" name="create_ad">Создать заявку</button>');
+                            document.querySelector('[name="create_ad"]').addEventListener('click', function (e) {
+                                popupOpen(document.querySelector('.popup'));
+                                e.preventDefault();
+                            })
+                        }
+                        if (!document.querySelector('[name="see_ads"]')){
+                            document.querySelector(".for_buttons").insertAdjacentHTML('beforeend', '<button class="lk-button" name="see_ads">Посмотреть заявки</button>');
+                            document.querySelector('[name="see_ads"]').addEventListener("click", () => {document.location='ads.html'});
+                        }
                         break
                 }
             })
@@ -160,16 +171,14 @@ function popupOpen(currentPopup){
 }
 
 function popupClose(popupActive){
-    popupActive.classList.remove('open');
-    document.ad.reset();
-    document.getElementById("successful").innerHTML = "";
-}
-
-function sent_ad(){
     document.getElementById("theme-error").innerHTML = "";
     document.getElementById("text-error").innerHTML = "";
     document.getElementById("file-error").innerHTML = "";
-    document.getElementById("successful").innerHTML = "";
+    popupActive.classList.remove('open');
+    document.ad.reset();
+}
+
+function sent_ad(){
     let theme = document.getElementById("theme").value;
     let text = document.getElementById("text").value;
     let file = document.getElementById("file_ad").files[0];
@@ -188,8 +197,9 @@ function sent_ad(){
         body: formData
     }).then(async response => {
         if (response.ok) {
+            popupClose(document.querySelector('.popup'));
             let data = await response.json();
-            document.getElementById('successful').innerHTML = data.message;
+            alert(data.message);
         } else if (response.status === 400) {
             let data = await response.json();
             let fields = Object.keys(data);
@@ -205,3 +215,18 @@ function sent_ad(){
         }
     });
 }
+
+function check_simvols(){
+    let input = document.getElementById("text");
+    let res = "";
+    for (elem of input.value){
+        if (res.length <= 4000){
+            res += elem;
+        }
+    }
+    if (res === ""){
+        input.value = "";
+    } else {
+        input.value = res;
+    }
+};

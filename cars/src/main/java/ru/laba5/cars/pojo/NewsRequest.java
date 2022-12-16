@@ -4,20 +4,18 @@ import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 @Data
-public class AdRequest {
+public class NewsRequest {
     @NotBlank(message = "Заполните поле")
-    private String theme;
+    private String title;
     @NotBlank(message = "Заполните поле")
-    @Size(max = 10000, message = "Слишком много текста")
     private String text;
-    private MultipartFile file;
+    private MultipartFile image;
 
-    public AdRequest(String theme, String text, MultipartFile file) {
-        this.theme = theme;
+    public NewsRequest(String title, String text, MultipartFile image) {
+        this.title = title;
         this.text = text;
-        this.file = file;
+        this.image = image;
     }
 }

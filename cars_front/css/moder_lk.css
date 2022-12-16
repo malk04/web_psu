@@ -29,7 +29,7 @@ header{
 #but{
     margin-left: auto;
     margin-right: 0;
-    max-width: 200px;
+    max-width: 395px;
     padding-top: 20px;
 }
 
@@ -41,6 +41,7 @@ header{
     font-size: 16px;
     border: 0ch;
     color: #fff;
+    margin: 5px;
 }
 
 .lk-button:hover {
@@ -178,7 +179,7 @@ h2{
     justify-content: center;
 }
 
-#theme{
+#title{
     width: 450px;
     font-size: 18px;
     font-family: Arial;
@@ -211,7 +212,7 @@ h2{
     background: #808f9f;
 }
 
-#file_ad {
+#file_image {
     width: 450px;
     font-size: 18px;
     font-family: Arial;
@@ -231,4 +232,25 @@ h2{
     color: #009959;
     margin: 2px;
     font-size: 22px;
+}
+
+.none{
+    display: none;
+}
+
+#delete-image{
+    width: 200px;
+    padding: 5px;
+    background: #575761;
+    text-align: center;
+    border: 0ch;
+    color: #fff;
+    margin: 10px;
+    font-size: 16px;
+    margin-left: 140px;
+    margin-bottom: 0;
+}
+
+#delete-image:hover{
+    background: #808f9f;
 }

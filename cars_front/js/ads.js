@@ -1,4 +1,8 @@
 document.addEventListener( "DOMContentLoaded", function(){
+    document.getElementById("text").addEventListener("input", function(){
+        check_simvols();
+    });
+
     get_info();
 
     // popup close
@@ -92,9 +96,11 @@ function popupOpen(currentPopup){
 }
 
 function popupClose(popupActive){
+    document.getElementById("theme-error").innerHTML = "";
+    document.getElementById("text-error").innerHTML = "";
+    document.getElementById("file-error").innerHTML = "";
     popupActive.classList.remove('open');
     document.ad.reset();
-    document.getElementById("successful").innerHTML = "";
 }
 
 function reestablish_form(id, edit_url){
@@ -126,9 +132,10 @@ function sent_for_edit(edit_url){
         body: formData
     }).then(async response => {
         if (response.ok) {
-            let data = await response.json()
-            document.getElementById('successful').innerHTML = data.message;
-        } else if (response.status == 400) {
+            popupClose(document.querySelector('.popup'));
+            let data = await response.json();
+            alert(data.message);
+        } else if (response.status === 400) {
             let data = await response.json();
             let fields = Object.keys(data);
             let errors = Object.values(data);
@@ -139,3 +146,18 @@ function sent_for_edit(edit_url){
         }
     })
 }
+
+function check_simvols(){
+    let input = document.getElementById("text");
+    let res = "";
+    for (elem of input.value){
+        if (res.length <= 4000){
+            res += elem;
+        }
+    }
+    if (res === ""){
+        input.value = "";
+    } else {
+        input.value = res;
+    }
+};

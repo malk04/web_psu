@@ -6,8 +6,8 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "ad_files")
-public class AdFile {
+@Table(name = "news_images")
+public class NewsImage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,18 +15,19 @@ public class AdFile {
     private String name;
 
     private String type;
+
     @Column(name = "file_path")
     private String filePath;
 
-    @OneToOne(mappedBy = "file")
-    private Ad ad;
+    @OneToOne(mappedBy = "image")
+    private News news;
 
-    public AdFile(String name, String type, String filePath) {
+    public NewsImage(String name, String type, String filePath) {
         this.name = name;
         this.type = type;
         this.filePath = filePath;
     }
 
-    public AdFile() {
+    public NewsImage() {
     }
 }
